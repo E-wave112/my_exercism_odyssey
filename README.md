@@ -1,2 +1,2 @@
-# my_exercism_odyssey
-All my code task on the exercism platform
+# the_odyssey_of_my_exercism
+All code challenges and task  i did on the  [exercism platform](https://exercism.io/)
