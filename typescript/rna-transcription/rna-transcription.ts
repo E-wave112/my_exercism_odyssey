@@ -17,21 +17,16 @@ export function toRna(str: string): string {
     T: 'A',
     A: 'U'
   };
-  if (str.length === 1 && rnaMap[str]) {
-    return rnaMap[str]
-    //transcribe the dna to rna
-  } else if (str.length === 1 && !rnaMap[str]) {
-    throw new Error("Invalid input DNA.");
-  } else if (str.length > 1 && str.length % 4 !== 0) {
-    throw new Error("Invalid input DNA.");
-  } else {
+  try {
     let rna: string = '';
-    for (let i = 0; i < str.length; i++) {
-      if (!(rnaMap[str[i]])) {
-        throw new Error("Invalid input DNA.");
+      for (let i = 0; i < str.length; i++) {
+        if (!(rnaMap[str[i]])) {
+          throw new Error("Invalid input DNA.");
+        }
+        rna += rnaMap[str[i]];
       }
-      rna += rnaMap[str[i]];
-    }
-    return rna;
+      return rna;
+    } catch (error) {
+    throw new Error('Invalid input DNA.');
   }
 }
